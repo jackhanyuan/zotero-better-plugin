@@ -1,0 +1,29 @@
+/**
+ * Toggle Left Pane
+ * @author [MuiseDestiny](https://github.com/MuiseDestiny), windingwind
+ * @usage Assign a shortcut
+ * @link https://github.com/windingwind/zotero-actions-tags/discussions/169
+ */
+const Zotero = require("Zotero");
+const Zotero_Tabs = require("Zotero_Tabs");
+const document = require("document");
+
+if (item) {
+  return;
+}
+
+if (Zotero_Tabs.selectedType === "library") {
+  const splitter = document.querySelector("#zotero-collections-splitter");
+  if (splitter.getAttribute("state") == "collapsed") {
+    splitter.setAttribute("state", "");
+    return;
+  } else {
+    splitter.setAttribute("state", "collapsed");
+    return;
+  }
+} else {
+  Zotero.Reader.getByTabID(
+    Zotero_Tabs.selectedID
+  )._internalReader.toggleSidebar();
+  return;
+}
