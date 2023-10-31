@@ -1,0 +1,79 @@
+# @author [jackhanyuan](https://github.com/jackhanyuan)
+# @source [zotero-better-plugin](https://github.com/jackhanyuan/zotero-better-plugin)
+# This template is specifically for importing/sharing, using better 
+# notes 'import from clipboard': copy the content and
+# goto Zotero menu bar, click Edit->New Template from Clipboard.  
+# Do not copy-paste this to better notes template editor directly.
+name: "[Text]MainNote"
+content: |-
+  <span>
+      <h1 style="color:#5686bf">
+          <font size="6">Note Title✍</font>
+      </h1>
+  </span>
+  
+  <table>
+      <tr>
+          <td style="background-color:#dbeedd;">
+              <b>👨‍🎓 Author：</b>
+          </td>
+      </tr>
+      <tr>
+          <td style="background-color:#f3faf4;">
+            <b>🌟 Remarks：</b>
+          </td>
+      </tr>
+      <tr>
+          <td style="background-color:#dbeedd;">
+            <b>🎯 Tags：</b>
+          </td>
+      </tr>
+      <tr>
+          <td style="background-color:#f3faf4;">
+              <b>📅 Note Date：</b>${new Date().toLocaleString()}
+          </td>
+      </tr>
+  </table>
+  
+  <span>
+      <h2 style="color:#e0ffff; background-color:#66cdaa;">📜 Research Background, Current State, Objectives</h2><hr />
+  </span>
+  <blockquote>Tips: What is the background of the problem, what is the current state domestically and internationally, and what are the objectives?</blockquote>
+  <p></p>
+  <h3>⚙️ Background</h3>
+  <p></p>
+  <h3>💡 Current State</h3>
+  <p></p>
+  <h3>🚀 Objectives</h3>
+  <p></p>
+  
+  <span>
+      <h2 style="color:#20b2aa; background-color:#afeeee;">🔁 Research Content</h2><hr />
+  </span>
+  <p></p>
+  <h3>🧩 Data</h3>
+  <p></p>
+  <h3>🚊 Research Foundation</h3>
+  <p></p>
+  <h3>💻 Technical Roadmap</h3>
+  <p></p>
+  <h3>👩🏻‍💻 Research Methods and Schemes</h3>
+  <p></p>
+  <h3>🔬 Experiment</h3>
+  <p></p>
+  <h3>📜 Conclusion</h3>
+  <p></p>
+  <h3>📚 Reference</h3>
+  <p></p>
+  
+  <span>
+      <h2 style="color:#004d99; background-color:#87cefa;">🤔 Personal Summary</h2><hr />
+  </span>
+  <blockquote>Tips: Personal gains and records?</blockquote>
+  <p></p>
+  <h3>🙋‍♀️ Key Records</h3>
+  <p></p>
+  <h3>📌 To be Resolved</h3>
+  <p></p>
+  <h3>💭 Thought Inspiration</h3>
+  <p></p>
