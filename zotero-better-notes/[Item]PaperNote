@@ -1,0 +1,191 @@
+# @author [jackhanyuan](https://github.com/jackhanyuan)
+# @source [zotero-better-plugin](https://github.com/jackhanyuan/zotero-better-plugin)
+# This template is specifically for importing/sharing, using better 
+# notes 'import from clipboard': copy the content and
+# goto Zotero menu bar, click Edit->New Template from Clipboard.  
+# Do not copy-paste this to better notes template editor directly.
+name: "[Item]PaperNote"
+content: |-
+  <!-- Title -->
+  <h1 style="color:#2C3E50;">
+    ${(() => {
+      const titleTranslation = topItem.getField("titleTranslation");
+      if (titleTranslation) {
+        return `(${topItem.getField("date")}) ${topItem.getField("title")} (${titleTranslation})`;
+      } else {
+        return `(${topItem.getField("date")}) ${topItem.getField("title")}`;
+      }
+    })()}
+  </h1>
+  
+  <!-- Meta Data -->
+  <span>
+    <h2 style="color: #1B5E20; background-color:#F1F8E9;">💡 Meta Data</h2>
+  </span>
+  
+  <table>
+    <!-- Author -->
+    <tr>
+      <td style="background-color:#dbeedd;">
+        <b>Author:</b> ${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
+      </td>
+    </tr>
+  
+    <!-- Journal -->
+    <tr>
+      <td style="background-color:#f3faf4;">
+        <b>Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b> (Publication Date: <b>${topItem.getField("date")}</b>)
+      </td>
+    </tr>
+  
+    <!-- Journal Division -->
+    <tr>
+      <td style="background-color:#dbeedd;">
+        <b>Journal Division: </b>
+        <!-- In zotero7, the tags of Ethereal Style plugin are referenced -->
+        ${ (() => {
+            let tags = Zotero.ZoteroStyle.data.ztoolkit.ItemTree.fieldHooks.globalCache.getFieldHooks.PublicationTags("", true, true, topItem, undefined);
+            const jsonStartIndex = tags.indexOf('{');
+            if (jsonStartIndex !== -1) {
+                tags = tags.slice(jsonStartIndex);
+            }
+            let regex = /"(sci|sciif)":"([^"]+)"/g;
+            let matches = tags.match(regex);
+
+            <!-- Conditional statement: to prevent errors when unable to find division for dissertations, conference papers, etc. -->
+            if (tags) {
+                const keyValuePairs = JSON.parse(tags);
+                const colors = ["#94635c", "#d0867b", "#dc796a", "#ba8f6c", "#c8825c", "#e78a59", "#e99d22", "#ce9335", "#ff945c"];
+                let out = "";
+
+                <!-- The division information uses easyscholar, there's a tutorial in zotero style -->
+                for (const key in keyValuePairs) {
+                    if (key === "sci") {
+                        out += `<span style="background-color: ${colors[0]}; color: #fff; margin-right: 20px; padding:5px;">SCI ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "sciif") {
+                        out += `<span style="background-color: ${colors[2]}; color: #fff; margin-right: 20px; padding:5px;">IF ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "ccf") {
+                        out += `<span style="background-color: ${colors[4]}; color: #fff; margin-right: 20px; padding:5px;">CCF ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "sciUp") {
+                        out += `<span style="background-color: ${colors[6]}; color: #fff; margin-right: 20px; padding:5px;">CAS ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "ssci") {
+                        out += `<span style="background-color: ${colors[8]}; color: #fff; margin-right: 20px; padding:5px;">SSCI ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "eii") {
+                        out += `<span style="background-color: ${colors[1]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "pku") {
+                        out += `<span style="background-color: ${colors[3]}; color: #fff; margin-right: 20px; padding:5px;">PKU ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "cssci") {
+                        out += `<span style="background-color: ${colors[5]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "utd24") {
+                        out += `<span style="background-color: ${colors[7]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "ft50") {
+                        out += `<span style="background-color: ${colors[9]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                    if (key === "fms") {
+                        out += `<span style="background-color: ${colors[0]}; color: #fff; margin-right: 20px; padding:5px;">FMS ${keyValuePairs[key]}</span>&nbsp;`;
+                    }
+                }
+                return out;
+            }
+        })()}
+      </td>
+    </tr>
+  
+    <!-- Local Link -->
+    <tr>
+      <td style="background-color:#f3faf4;">
+        <b>Local Link: </b>
+        <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].key}>
+          ${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].getFilename()}
+        </a>
+      </td>
+    </tr>
+    
+    <!-- DOI or URL -->
+    <tr>
+      <td style="background-color:#dbeedd;">
+        ${(() => {
+          const doi = topItem.getField("DOI");
+          if (doi) {
+            return `<b>DOI: </b><a href="https://doi.org/${topItem.getField('DOI')}">${topItem.getField('DOI')}</a>`;
+          } else {
+            return `<b>URL: </b><a href="${topItem.getField('url')}">${topItem.getField('url')}</a>`;
+          }
+        })()}
+      </td>
+    </tr>
+    
+    <!-- Abstract -->
+    <tr>
+      <td style="background-color:#f3faf4;">
+        ${(() => {
+          const abstractTranslation = topItem.getField('abstractTranslation');
+          if (abstractTranslation) {
+            return `<b>Abstract Translation: </b><i>${abstractTranslation}</i>`;
+          } else {
+            return `<b>Abstract: </b><i>${topItem.getField('abstractNote')}</i>`;
+          }
+        })()}
+      </td>
+    </tr>
+  
+    <!-- Note Date -->
+    <tr>
+      <td style="background-color:#dbeedd;">
+        <b>Note Date: </b>${new Date().toLocaleString()}
+      </td>
+    </tr>
+  
+  </table>
+  
+  <!-- Main Content -->
+  <span>
+    <h2 style="color:#e0ffff; background-color:#66cdaa;">📜 Research Core</h2>
+    <hr />
+  </span>
+  <blockquote>Tips: What was done, what problem was solved, innovations and shortcomings?</blockquote>
+  <p></p>
+  <h3>⚙️ Content</h3>
+  <p></p>
+  <h3>💡 Innovations</h3>
+  <p></p>
+  <h3>🧩 Shortcomings</h3>
+  <p></p>
+  
+  <span>
+    <h2 style="color:#20b2aa; background-color:#afeeee;">🔁 Research Content</h2>
+    <hr />
+  </span>
+  <p></p>
+  <h3>💧 Data</h3>
+  <p></p>
+  <h3>👩🏻‍💻 Method</h3>
+  <p></p>
+  <h3>🔬 Experiment</h3>
+  <p></p>
+  <h3>📜 Conclusion</h3>
+  <p></p>
+  
+  <span>
+    <h2 style="color:#004d99; background-color:#87cefa;">🤔 Personal Summary</h2>
+    <hr />
+  </span>
+  <blockquote>Tips: What aspects did you question, how do you think it can be improved?</blockquote>
+  <p></p>
+  <h3>🙋‍♀️ Key Records</h3>
+  <p></p>
+  <h3>📌 To be resolved</h3>
+  <p></p>
+  <h3>💭 Thought Inspiration</h3>
+  <p></p>
+
+
