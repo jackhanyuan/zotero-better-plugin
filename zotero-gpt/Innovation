@@ -1,0 +1,22 @@
+#创新点[position=0][color=#A6C860][trigger=]
+下面是一篇论文内容：
+
+```js
+const ztoolkit = Zotero.ZoteroGPT.data.ztoolkit
+let getSelection = () => {
+    return ztoolkit.Reader.getSelectedText(
+ Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)
+    );
+}
+console.log(getSelection())
+getSelection()
+```
+
+请问它的主要工作是什么，解决了什么问题，创新点与不足有哪些，结论是什么？
+
+请你用下列示例格式回答我：
+主要工作：XXX；
+解决问题：XXX；
+创新点：XXX；
+不足：XXX；
+结论：XXX；

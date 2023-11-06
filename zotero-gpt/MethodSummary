@@ -1,0 +1,14 @@
+#方法总结[position=0][color=#61E50C][trigger=]
+请用子弹列表的形式提取该研究内容的信息，包括 数据，方法，实验，结论。务必使用中文回答。
+下面是论文的研究内容部分：
+
+```js
+const ztoolkit = Zotero.ZoteroGPT.data.ztoolkit
+let getSelection = () => {
+    return ztoolkit.Reader.getSelectedText(
+ Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)
+    );
+}
+console.log(getSelection())
+getSelection()
+```

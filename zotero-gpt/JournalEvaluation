@@ -1,0 +1,8 @@
+#🔭期刊评价[position=-1][color=#090AEA][trigger=]
+请问下面这个期刊或者会议什么水平：
+
+```js
+ZoteroPane.getSelectedItems()[0].getField("publicationTitle") + ZoteroPane.getSelectedItems()[0].getField("proceedingsTitle");
+```
+
+如果是期刊请给出它的影响因子，期刊官网，投稿指南，以及你对它的评价。如果是会议请给出它的会议时间，投稿指南，会议影响力以及你对它的评价。

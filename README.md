@@ -23,6 +23,8 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ## zotero-better-notes
 
+[Note Discussions](https://github.com/windingwind/zotero-better-notes/discussions)
+
 ### Note Templates
 
 - [Paper Note](./zotero-better-notes/[Item]PaperNote)
@@ -37,6 +39,8 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [Common Note](./zotero-better-notes/[Text]CommonNote)
 
 ## zotero-actions-tags
+
+[Actions & Tags Discussions](https://github.com/windingwind/zotero-actions-tags/discussions)
 
 ### Actions
 
@@ -96,4 +100,16 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ## zotero-gpt
 
+[Command Tags Discussions](https://github.com/MuiseDestiny/zotero-gpt/discussions)
+
 ### Command Tag
+
+- [期刊评价](./zotero-gpt/JournalEvaluation)
+
+- [方法总结](./zotero-gpt/MethodSummary)
+
+- [创新点](./zotero-gpt/Innovation)
+
+- [摘要转综述](./zotero-gpt/AbstractToReview)
+
+- [数学公式解释](./zotero-gpt/MathSolver)

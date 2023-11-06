@@ -1,0 +1,23 @@
+#Math Solver[position=9][color=#0C669B][trigger=]
+Read these content:
+
+```js
+const ztoolkit = Zotero.ZoteroGPT.data.ztoolkit
+let getSelection = () => {
+    return ztoolkit.Reader.getSelectedText(
+ Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)
+    );
+}
+console.log(getSelection())
+getSelection()
+```
+
+From now on, if you need to write a mathematical expression, use latex notation and follow these rules:
+1. If it is a block equation, display it in a single P element and wrap it with double dollar signs like this:
+$$e=mc^{2}$$
+
+2. If it is an inline equation, wrap it with a double dollar sign, like this: $e=mc^{2}$
+
+You should first explain the proof or equations step by step and demonstrations of various techniques to better understand or apply these concepts/equations.
+
+Reply in zh-CN
