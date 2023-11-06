@@ -1,0 +1,41 @@
+// Copy item link
+// @author windingwind
+// @link https://github.com/windingwind/zotero-actions-tags/discussions/115
+// @usage Select an item in the library and press the assigned shortcut keys
+
+if (!item) {
+	return "[Copy Item Link] item is empty";
+}
+
+const libraryType = item.library.libraryType;
+const key = item.key;
+
+let uri;
+
+if (libraryType === "user") {
+	uri = "zotero://select/library/items/" + key;
+}
+else {
+	const groupID = Zotero.Libraries.get(item.libraryID).groupID;
+	uri = "zotero://select/groups/" + groupID + "/items/" + key;
+}
+
+const clipboard = new Zotero.ActionsTags.api.utils.ClipboardHelper();
+
+let linkText;
+// Use title
+linkText = item.getField("title");
+// Use citation key
+// linkText = item.getField("citationKey");
+
+let plainText;
+// Use plain-text
+// plainText = uri;
+// Use MarkDown
+plainText = `[${linkText}](${uri})`
+clipboard
+	.addText(plainText, "text/unicode")
+	.addText(`<a href="${uri}">${linkText}</a>`, "text/html")
+	.copy();
+
+return `[Copy Item Link] item link ${uri} copied.`

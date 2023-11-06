@@ -41,16 +41,58 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 ### Actions
 
 - [Toggle Left Pane](./zotero-actions-tags/ToggleLeftPane)
+  - `Name` : Toggle Left Pane
   - `Event` : None
   - `Operation` : Script
   - `Data` : `ToggleLeftPane`
   - `Shortcut`: Shift + [
 
 - [Toggle Right Pane](./zotero-actions-tags/ToggleRightPane)
+  - `Name` : Toggle Right Pane
   - `Event` : None
   - `Operation` : Script
   - `Data` : `ToggleRightPane`
   - `Shortcut`: Shift + ]
+
+- [New Paper Note](./zotero-actions-tags/NewPaperNote)
+  - `Name` : New Paper Note
+  - `Event` : None
+  - `Operation` : Script
+  - `Data` : `NewPaperNote`
+  - `Shortcut`: None
+  - `Menu Label`: New Paper Note
+
+- [New Common Note](./zotero-actions-tags/NewCommonNote)
+  - `Name` : New Common Note
+  - `Event` : None
+  - `Operation` : Script
+  - `Data` : `NewCommonNote`
+  - `Shortcut`: None
+  - `Menu Label`: New Common Note
+
+- [Copy Item Link](./zotero-actions-tags/CopyItemLink)
+  - `Name` : Copy Item Link
+  - `Event` : None
+  - `Operation` : Script
+  - `Data` : `CopyItemLink`
+  - `Shortcut`: None
+  - `Menu Label`: Copy Item Link
+
+- [Merge Duplicate Item](./zotero-actions-tags/MergeDupItem)
+  - `Name` : Merge Duplicate Item
+  - `Event` : None
+  - `Operation` : Script
+  - `Data` : `MergeDupItem`
+  - `Shortcut`: None
+  - `Menu Label`: Merge Duplicate Item
+
+- [Download PDF from Scihub](./zotero-actions-tags/PDFFromScihub)
+  - `Name` : Download PDF From Scihub
+  - `Event` : None
+  - `Operation` : Script
+  - `Data` : `PDFFromScihub`
+  - `Shortcut`: None
+  - `Menu Label`: Download PDF From Scihub
 
 ## zotero-gpt
 

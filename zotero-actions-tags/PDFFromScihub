@@ -1,0 +1,47 @@
+// PDF From Scihub
+// @author Polygon
+// @link https://github.com/windingwind/zotero-actions-tags/discussions/124
+// @usage Menu Label=PDF From Scihub
+const ZoteroPane = require("ZoteroPane")
+const Zotero = require("Zotero")
+let DOI = ""
+if (!item.isRegularItem()) {
+    return "This type is not supported"
+} else if ((DOI = item.getField("DOI")).length == 0) {
+    return "No DOI does not support query"
+}
+// scihub start
+let parser = new DOMParser()
+let scihubUrl = "https://sci-hub.se"
+let url = `${scihubUrl}/${DOI}`
+let resp = await Zotero.HTTP.request("GET", url)
+let htmlDoc = parser.parseFromString(resp.responseText, "text/html")
+let pdfTag = htmlDoc.querySelector("#pdf")
+if (pdfTag) {
+    let pdfUrl = pdfTag.getAttribute("src")
+    if (pdfUrl.startsWith("//")) {
+        pdfUrl = "https:" + pdfUrl
+    } else if (pdfUrl.startsWith("/")) {
+        pdfUrl = scihubUrl + pdfUrl
+    }
+    let importOptions = {
+        libraryID: item.libraryID,
+        url: pdfUrl,
+        parentItemID: item.id,
+        title: "PDF_From_Scihub",
+        fileBaseName: "Full_Text_by_Action",
+        contentType: 'application/pdf',
+        referrer: url,
+    }
+    // result is an attachment item
+    let result = await Zotero.Attachments.importFromURL(importOptions)
+    if (result.key) {
+        return "SciHub Download Successful"
+    }
+}
+
+// open-access start if pdf can not found in scihub
+Zotero.launchURL(
+    `https://www.open-access.xyz/?doi=${DOI}`
+)
+return "Querying..."

@@ -1,0 +1,72 @@
+// New Common Note
+// @author windingwind, wklimowicz
+// @Modify by [jackhanyuan](https://github.com/jackhanyuan)
+// @link https://github.com/windingwind/zotero-tag/discussions/109
+
+const Zotero = require("Zotero");
+const window = require("window");
+
+if (!Zotero.BetterNotes?.api.note?.insert) {
+	return "[Action:Auto-Template] Better Notes for Zotero > 1.1.4-21 is not installed or disabled.";
+}
+if (!item) {
+	return "[Action:Auto-Template] Target item is empty";
+}
+
+// Check if any note exists for the item
+const autoTemplateTag = "auto-template";
+const notes = Zotero.Items.get(item.getNotes());
+if (notes.length > 0) {
+    return "A note exists for this item";
+}
+
+const prefsKey = "extensions.actionsTags.customAction.autoRunBNCommonTemplate";
+
+// Get template name
+let templateName = Zotero.Prefs.get(prefsKey, true);
+let templateContent = Zotero.BetterNotes.api.template.getTemplateText(templateName);
+if (!templateContent) {
+	// Template name is not defined or invalid. Get from input
+	const templateNames = Zotero.BetterNotes.api.template.getTemplateKeys();
+
+	function selectItems(itemList) {
+		var io = { dataIn: itemList, dataOut: null };
+		window.openDialog("chrome://zotero/content/ingester/selectitems.xhtml",
+			"_blank", "chrome,modal,centerscreen,resizable=yes", io);
+		return io.dataOut;
+	}
+
+	templateName = Object.values(selectItems(templateNames))[0];
+	templateContent = Zotero.BetterNotes.api.template.getTemplateText(templateName);
+	if (!templateContent) {
+		return "[Action:Auto-Template] Template is invalid";
+	}
+	Zotero.Prefs.set(prefsKey, templateName, true);
+}
+
+const parentItem = Zotero.Items.getTopLevel([item])[0];
+
+const noteItem = new Zotero.Item("note");
+noteItem.libraryID = parentItem.libraryID;
+noteItem.parentID = parentItem.id;
+noteItem.addTag(autoTemplateTag, 0);
+await noteItem.saveTx();
+
+let html = "";
+if (templateName.toLowerCase().startsWith("[item]")) {
+	html = await Zotero.BetterNotes.api.template.runItemTemplate(templateName, {
+		itemIds: [parentItem.id],
+		targetNoteId: noteItem.id,
+	});
+} else {
+	html = await Zotero.BetterNotes.api.template.runTextTemplate(templateName, {
+		targetNoteId: noteItem.id,
+	});
+}
+await Zotero.BetterNotes.api.note.insert(
+	noteItem,
+	html,
+	-1,
+);
+
+return `[Action:Auto-Template] Note ${noteItem.getNoteTitle()} is created on item ${item.getField("title")} from template ${templateName}`;

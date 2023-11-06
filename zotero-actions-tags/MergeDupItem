@@ -1,0 +1,18 @@
+/**
+ * Merge duplicate items
+ * @author Zotero Community
+ * @link https://github.com/windingwind/zotero-actions-tags/discussions/
+ */
+const pane = require('ZoteroPane')
+const zdp = require('Zotero_Duplicates_Pane')
+
+const isDuplicates = pane.getCollectionTreeRow().isDuplicates()
+
+if (!isDuplicates) return "💥Please click on the duplicate item on the left"
+while (pane.itemsView._rows.length > 0) {
+	await new Promise(r => setTimeout(r, 1500))
+	pane.mergeSelectedItems()
+	zdp.merge()
+}
+
+return 'Duplicate items merged successfully'
