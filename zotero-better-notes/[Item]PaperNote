@@ -7,7 +7,7 @@
 name: "[Item]PaperNote"
 content: |-
   <!-- Title -->
-  <h1 style="color:#2C3E50;">
+  <h1 style="color:#193c47; background-color:#eef9fd; padding:8px;">
     ${(() => {
       const titleTranslation = topItem.getField("titleTranslation");
       if (titleTranslation) {
@@ -20,28 +20,28 @@ content: |-
   
   <!-- Meta Data -->
   <span>
-    <h2 style="color: #1B5E20; background-color:#F1F8E9;">💡 Meta Data</h2>
+    <h2 style="color:#1b5e20; background-color:#f1f8e9;">💡 Meta Data</h2>
   </span>
   
   <table>
     <!-- Author -->
     <tr>
-      <td style="background-color:#dbeedd;">
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
         <b>Author:</b> ${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
       </td>
     </tr>
   
     <!-- Journal -->
     <tr>
-      <td style="background-color:#f3faf4;">
-        <b>Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b> (Publication Date: <b>${topItem.getField("date")}</b>)
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
+        <b style="color:#193c47;">Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> (Publication Date: ${topItem.getField("date")})</b>
       </td>
     </tr>
   
-    <!-- Journal Division -->
+    <!-- Journal Tags -->
     <tr>
-      <td style="background-color:#dbeedd;">
-        <b>Journal Division: </b>
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+        <b>Journal Tags: </b>
         <!-- In zotero7, the tags of Ethereal Style plugin are referenced -->
         ${ (() => {
             let tags = Zotero.ZoteroStyle.data.ztoolkit.ItemTree.fieldHooks.globalCache.getFieldHooks.PublicationTags("", true, true, topItem, undefined);
@@ -51,47 +51,47 @@ content: |-
             }
             let regex = /"(sci|sciif)":"([^"]+)"/g;
             let matches = tags.match(regex);
-
+  
             <!-- Conditional statement: to prevent errors when unable to find division for dissertations, conference papers, etc. -->
             if (tags) {
                 const keyValuePairs = JSON.parse(tags);
                 const colors = ["#94635c", "#d0867b", "#dc796a", "#ba8f6c", "#c8825c", "#e78a59", "#e99d22", "#ce9335", "#ff945c"];
                 let out = "";
-
+  
                 <!-- The division information uses easyscholar, there's a tutorial in zotero style -->
                 for (const key in keyValuePairs) {
                     if (key === "sci") {
-                        out += `<span style="background-color: ${colors[0]}; color: #fff; margin-right: 20px; padding:5px;">SCI ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">SCI ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "sciif") {
-                        out += `<span style="background-color: ${colors[2]}; color: #fff; margin-right: 20px; padding:5px;">IF ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">IF ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "ccf") {
-                        out += `<span style="background-color: ${colors[4]}; color: #fff; margin-right: 20px; padding:5px;">CCF ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[4]}; padding:6px;">CCF ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "sciUp") {
-                        out += `<span style="background-color: ${colors[6]}; color: #fff; margin-right: 20px; padding:5px;">CAS ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[6]}; padding:6px;">CAS ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "ssci") {
-                        out += `<span style="background-color: ${colors[8]}; color: #fff; margin-right: 20px; padding:5px;">SSCI ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[8]}; padding:6px;">SSCI ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "eii") {
-                        out += `<span style="background-color: ${colors[1]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[1]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "pku") {
-                        out += `<span style="background-color: ${colors[3]}; color: #fff; margin-right: 20px; padding:5px;">PKU ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[3]}; padding:6px;">PKU ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "cssci") {
-                        out += `<span style="background-color: ${colors[5]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[5]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "utd24") {
-                        out += `<span style="background-color: ${colors[7]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[7]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "ft50") {
-                        out += `<span style="background-color: ${colors[0]}; color: #fff; margin-right: 20px; padding:5px;">${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
                     }
                     if (key === "fms") {
-                        out += `<span style="background-color: ${colors[2]}; color: #fff; margin-right: 20px; padding:5px;">FMS ${keyValuePairs[key]}</span>&nbsp;`;
+                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">FMS ${keyValuePairs[key]}</span>&nbsp;`;
                     }
                 }
                 return out;
@@ -102,7 +102,7 @@ content: |-
   
     <!-- Local Link -->
     <tr>
-      <td style="background-color:#f3faf4;">
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         <b>Local Link: </b>
         <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].key}>
           ${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].getFilename()}
@@ -112,7 +112,7 @@ content: |-
     
     <!-- DOI or URL -->
     <tr>
-      <td style="background-color:#dbeedd;">
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
         ${(() => {
           const doi = topItem.getField("DOI");
           if (doi) {
@@ -126,7 +126,7 @@ content: |-
     
     <!-- Abstract -->
     <tr>
-      <td style="background-color:#f3faf4;">
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         ${(() => {
           const abstractTranslation = topItem.getField('abstractTranslation');
           if (abstractTranslation) {
@@ -140,7 +140,7 @@ content: |-
   
     <!-- Note Date -->
     <tr>
-      <td style="background-color:#dbeedd;">
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
         <b>Note Date: </b>${new Date().toLocaleString()}
       </td>
     </tr>
@@ -187,5 +187,3 @@ content: |-
   <p></p>
   <h3>💭 Thought Inspiration</h3>
   <p></p>
-
-

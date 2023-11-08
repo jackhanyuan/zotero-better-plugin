@@ -7,36 +7,34 @@
 name: "[Text]CommonNote"
 content: |-
   <span>
-      <h1 style="color:#5686bf">
-          <font size="6">Note Title✍</font>
-      </h1>
+    <h1 style="color:#5686bf; background-color:#eef9fd;">CommonNote Title✍</h1>
   </span>
   
   <table>
-      <tr>
-          <td style="background-color:#dbeedd;">
-              <b>👨‍🎓 Author：</b>
-          </td>
-      </tr>
     <tr>
-          <td style="background-color:#f3faf4;">
-            <b>🌟 Remark：</b>
-          </td>
-      </tr>
-      <tr>
-          <td style="background-color:#dbeedd;">
-            <b>🎯 Tags：</b>
-          </td>
-      </tr>
-      <tr>
-          <td style="background-color:#f3faf4;">
-              <b>📅 Note Date：</b>${new Date().toLocaleString()}
-          </td>
-      </tr>
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+        <b>👨‍🎓 Author：</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
+        <b>🌟 Remark：</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+        <b>🎯 Tags：</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
+        <b>📅 Note Date：</b>${new Date().toLocaleString()}
+      </td>
+    </tr>
   </table>
   
   <span>
-      <h2 style="color:#e0ffff; background-color:#66cdaa;">📜 Research Core</h2><hr />
+    <h2 style="color:#e0ffff; background-color:#66cdaa;">📜 Research Core</h2><hr />
   </span>
   <blockquote>Tips: What was done, what problem was solved, innovations and shortcomings?</blockquote>
   <p></p>
@@ -48,7 +46,7 @@ content: |-
   <p></p>
   
   <span>
-      <h2 style="color:#20b2aa; background-color:#afeeee;">🔁 Research Content</h2><hr />
+    <h2 style="color:#20b2aa; background-color:#afeeee;">🔁 Research Content</h2><hr />
   </span>
   <p></p>
   <h3>💧 Data</h3>
@@ -61,7 +59,7 @@ content: |-
   <p></p>
   
   <span>
-      <h2 style="color:#004d99; background-color:#87cefa;">🤔 Personal Summary</h2><hr />
+    <h2 style="color:#004d99; background-color:#87cefa;">🤔 Personal Summary</h2><hr />
   </span>
   <blockquote>Tips: Personal takeaways and records?</blockquote>
   <p></p>
@@ -71,4 +69,3 @@ content: |-
   <p></p>
   <h3>💭 Thought Inspiration</h3>
   <p></p>
-
