@@ -27,16 +27,16 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ### Note Templates
 
-- [Paper Note](./zotero-better-notes/[Item]PaperNote)
+- [Paper Note](./zotero-better-notes/[Item]PaperNote.md)
   ![Paper Note](./imgs/PaperNote.png)
-  - `MetaData` : Auto extract Author, Journal, Journal Division, Local Link, DOI, Abstract, Note Date, etc.
+  - `MetaData` : Auto extract Author, Journal, Journal Tags, Local Link, DOI, Abstract, Note Date, etc.
   - `DOI` : Show `url` if the DOI does not exist.
   - `Abstract` : Show `abstractTranslation` if the it exists. Otherwise, show `abstractNote`.
 
-- [Main Note](./zotero-better-notes/[Text]MainNote)
+- [Main Note](./zotero-better-notes/[Text]MainNote.md)
   ![Main Note](./imgs/MainNote.png)
 
-- [Common Note](./zotero-better-notes/[Text]CommonNote)
+- [Common Note](./zotero-better-notes/[Text]CommonNote.md)
 
 ## zotero-actions-tags
 
