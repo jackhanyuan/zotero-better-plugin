@@ -16,6 +16,7 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [zotero-reference](https://github.com/MuiseDestiny/zotero-reference)
 - [zotero-pdf-preview](https://github.com/windingwind/zotero-pdf-preview)
 - [zotero-format-metadata](https://github.com/northword/zotero-format-metadata)
+- [zotero-attanger](https://github.com/MuiseDestiny/zotero-attanger)
 - [zotero-citation](https://github.com/MuiseDestiny/zotero-citation)
 - [zotero-figure](https://github.com/MuiseDestiny/zotero-figure)
 - [delitemwithatt](https://github.com/redleafnew/delitemwithatt)
