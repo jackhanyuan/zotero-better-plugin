@@ -22,6 +22,13 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [delitemwithatt](https://github.com/redleafnew/delitemwithatt)
 - [notero](https://github.com/dvanoni/notero)
 
+## zotero other links
+
+- [Zotero Beta Builds](https://www.zotero.org/support/beta_builds)
+- [zotero-chines](https://zotero-chinese.com)
+- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/)
+- [translators_CN](https://github.com/l0o0/translators_CN)
+
 ## zotero-better-notes
 
 [Note Discussions](https://github.com/windingwind/zotero-better-notes/discussions)
