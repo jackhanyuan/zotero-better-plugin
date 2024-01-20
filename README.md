@@ -26,8 +26,9 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 - [Zotero7 Beta Builds](https://www.zotero.org/support/beta_builds)
 - [zotero-chinese](https://zotero-chinese.com)
-- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/)
+- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl)
 - [translators_CN](https://github.com/l0o0/translators_CN)
+- [easyScholar](https://www.easyscholar.cc)
 
 ## zotero-better-notes
 
