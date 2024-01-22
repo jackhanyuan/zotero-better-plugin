@@ -4,31 +4,31 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ## zotero7 recommended plugins
 
-- [zotero-addons](https://github.com/syt2/zotero-addons)
-- [zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate)
-- [zotero-better-notes](https://github.com/windingwind/zotero-better-notes)
-- [zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex)
-- [jasminum](https://github.com/l0o0/jasminum)
-- [zotero-gpt](https://github.com/MuiseDestiny/zotero-gpt)
-- [zotero-style](https://github.com/MuiseDestiny/zotero-style)
-- [zotero-night](https://github.com/tefkah/zotero-night)
-- [zotero-actions-tags](https://github.com/windingwind/zotero-actions-tags)
-- [zotero-reference](https://github.com/MuiseDestiny/zotero-reference)
-- [zotero-pdf-preview](https://github.com/windingwind/zotero-pdf-preview)
-- [zotero-format-metadata](https://github.com/northword/zotero-format-metadata)
-- [zotero-attanger](https://github.com/MuiseDestiny/zotero-attanger)
-- [zotero-citation](https://github.com/MuiseDestiny/zotero-citation)
-- [zotero-figure](https://github.com/MuiseDestiny/zotero-figure)
-- [delitemwithatt](https://github.com/redleafnew/delitemwithatt)
-- [notero](https://github.com/dvanoni/notero)
+- [zotero-addons](https://github.com/syt2/zotero-addons) - A Zotero Add-on for collecting and installing add-ons in Zotero. Zotero 插件商店。
+- [zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate) - Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.
+- [zotero-better-notes](https://github.com/windingwind/zotero-better-notes) - Everything about note management. All in Zotero.
+- [zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex) - Make Zotero effective for us LaTeX holdouts.
+- [jasminum](https://github.com/l0o0/jasminum) - A Zotero add-on to retrive CNKI meta data. 一个简单的 Zotero 插件，用于识别中文元数据。
+- [zotero-gpt](https://github.com/MuiseDestiny/zotero-gpt) - Use ChatGPT to search and ask items based on the selected text or the PDF file.
+- [zotero-style](https://github.com/MuiseDestiny/zotero-style) - Ethereal Style for Zotero. Modifies columns and adds some interesting ones.
+- [zotero-night](https://github.com/tefkah/zotero-night) - Night theme for Zotero UI and PDF.
+- [zotero-actions-tags](https://github.com/windingwind/zotero-actions-tags) - Action it, tag it, sorted.
+- [zotero-reference](https://github.com/MuiseDestiny/zotero-reference) - PDF references add-on for Zotero.
+- [zotero-pdf-preview](https://github.com/windingwind/zotero-pdf-preview) - Preview Zotero attachments in the library view.
+- [zotero-format-metadata](https://github.com/northword/zotero-format-metadata) - Linter for Zotero. An addon for Zotero to format item metadata. 
+- [zotero-attanger](https://github.com/MuiseDestiny/zotero-attanger) - Attachment Manager for Zotero. Zotfile reimplementation for zotero7.
+- [zotero-citation](https://github.com/MuiseDestiny/zotero-citation) - Make Zotero's citation in Word easier and clearer.
+- [zotero-figure](https://github.com/MuiseDestiny/zotero-figure) - A PDF chart parsing add-on based on PDFFigure2
+- [delitemwithatt](https://github.com/redleafnew/delitemwithatt) - Remove attachments when delete the items or collections in Zotero and JurisM.
+- [notero](https://github.com/dvanoni/notero) - Syncing items and notes into Notion.
 
 ## zotero other links
 
-- [Zotero7 Beta Builds](https://www.zotero.org/support/beta_builds)
-- [zotero-chinese](https://zotero-chinese.com)
-- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl)
-- [translators_CN](https://github.com/l0o0/translators_CN)
-- [easyScholar](https://www.easyscholar.cc)
+- [Zotero7 Beta Builds](https://www.zotero.org/support/beta_builds) - Zotero7 官方下载链接。
+- [zotero-chinese](https://zotero-chinese.com) - Zotero 中文小组，维护 Zotero 中文文档、教程等。
+- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl) - 中文CLS样式（参考文献样式）。
+- [translators_CN](https://github.com/l0o0/translators_CN) - Zotero translator中文网页抓取翻译器。
+- [easyScholar](https://www.easyscholar.cc) - 在论文搜索网站上显示期刊等级，配合 zotero-style 插件可在 Zotero 内显示期刊标签。
 
 ## zotero-better-notes
 
