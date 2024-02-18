@@ -58,61 +58,17 @@ content: |-
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
         <b>Journal Tags: </b>
-        <!-- In zotero7, the tags of Ethereal Style plugin are referenced -->
-        ${ (() => {
-            let tags = Zotero.ZoteroStyle.data.ztoolkit.ItemTree.fieldHooks.globalCache.getFieldHooks.PublicationTags("", true, true, topItem, undefined);
-            const jsonStartIndex = tags.indexOf('{');
-            if (jsonStartIndex !== -1) {
-                tags = tags.slice(jsonStartIndex);
-            }
-            let regex = /"(sci|sciif)":"([^"]+)"/g;
-            let matches = tags.match(regex);
-  
-            <!-- Conditional statement: to prevent errors when unable to find division for dissertations, conference papers, etc. -->
-            if (tags) {
-                const keyValuePairs = JSON.parse(tags);
-                const colors = ["#94635c", "#d0867b", "#dc796a", "#ba8f6c", "#c8825c", "#e78a59", "#e99d22", "#ce9335", "#ff945c"];
-                let out = "";
-  
-                <!-- The division information uses easyscholar, there's a tutorial in zotero style -->
-                for (const key in keyValuePairs) {
-                    if (key === "sci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">SCI ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "sciif") {
-                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">IF ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ccf") {
-                        out += `<span style="color:#ffffff; background-color:${colors[4]}; padding:6px;">CCF ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "sciUp") {
-                        out += `<span style="color:#ffffff; background-color:${colors[6]}; padding:6px;">CAS ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ssci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[8]}; padding:6px;">SSCI ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "eii") {
-                        out += `<span style="color:#ffffff; background-color:${colors[1]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "pku") {
-                        out += `<span style="color:#ffffff; background-color:${colors[3]}; padding:6px;">PKU ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "cssci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[5]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "utd24") {
-                        out += `<span style="color:#ffffff; background-color:${colors[7]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ft50") {
-                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "fms") {
-                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">FMS ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                }
-                return out;
-            }
-        })()}
+        <!-- In Zotero7, the tags of Ethereal Style plugin are referenced. Please install Ethereal Style in advance. -->
+        ${{
+        let space = " ㅤㅤ ㅤㅤ"
+        return Array.prototype.map.call(
+          Zotero.ZoteroStyle.api.renderCell(topItem, "publicationTags").childNodes,
+          e => {
+            e.innerText =  space + e.innerText + space;
+            return e.outerHTML
+          }
+          ).join(space)
+        }}$
       </td>
     </tr>
   
@@ -253,61 +209,17 @@ content: |-
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
         <b>期刊分区: </b>
-        <!-- zotero7中，引用了Ethereal Style插件的标签 -->
-        ${ (() => {
-            let tags = Zotero.ZoteroStyle.data.ztoolkit.ItemTree.fieldHooks.globalCache.getFieldHooks.PublicationTags("", true, true, topItem, undefined);
-            const jsonStartIndex = tags.indexOf('{');
-            if (jsonStartIndex !== -1) {
-                tags = tags.slice(jsonStartIndex);
-            }
-            let regex = /"(sci|sciif)":"([^"]+)"/g;
-            let matches = tags.match(regex);
-  
-            <!-- 条件语句：防止学位论文、会议论文等找不到分区报错 -->
-            if (tags) {
-                const keyValuePairs = JSON.parse(tags);
-                const colors = ["#94635c", "#d0867b", "#dc796a", "#ba8f6c", "#c8825c", "#e78a59", "#e99d22", "#ce9335", "#ff945c"];
-                let out = "";
-  
-                <!-- 分区信息使用的是easyscholar，zotero style有教程 -->
-                for (const key in keyValuePairs) {
-                    if (key === "sci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">SCI ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "sciif") {
-                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">IF ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ccf") {
-                        out += `<span style="color:#ffffff; background-color:${colors[4]}; padding:6px;">CCF ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "sciUp") {
-                        out += `<span style="color:#ffffff; background-color:${colors[6]}; padding:6px;">中科院 ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ssci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[8]}; padding:6px;">SSCI ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "eii") {
-                        out += `<span style="color:#ffffff; background-color:${colors[1]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "pku") {
-                        out += `<span style="color:#ffffff; background-color:${colors[3]}; padding:6px;">北核 ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "cssci") {
-                        out += `<span style="color:#ffffff; background-color:${colors[5]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "utd24") {
-                        out += `<span style="color:#ffffff; background-color:${colors[7]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "ft50") {
-                        out += `<span style="color:#ffffff; background-color:${colors[0]}; padding:6px;">${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                    if (key === "fms") {
-                        out += `<span style="color:#ffffff; background-color:${colors[2]}; padding:6px;">FMS ${keyValuePairs[key]}</span>&nbsp;`;
-                    }
-                }
-                return out;
-            }
-        })()}
+        <!-- Zotero7中，引用了Ethereal Style插件的标签，请提前安装Ethereal Style-->
+        ${{
+        let space = " ㅤㅤ ㅤㅤ"
+        return Array.prototype.map.call(
+          Zotero.ZoteroStyle.api.renderCell(topItem, "publicationTags").childNodes,
+          e => {
+            e.innerText =  space + e.innerText + space;
+            return e.outerHTML
+          }
+          ).join(space)
+        }}$
       </td>
     </tr>
   
