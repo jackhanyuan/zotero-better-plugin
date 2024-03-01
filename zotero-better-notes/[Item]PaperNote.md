@@ -35,10 +35,6 @@ content: |-
   </h1>
   
   <!-- Meta Data -->
-  <span>
-    <h2 style="color:#1b5e20; background-color:#f1f8e9;">💡 Meta Data</h2>
-  </span>
-  
   <table>
     <!-- Author -->
     <tr>
@@ -186,10 +182,6 @@ content: |-
   </h1>
   
   <!-- Meta Data -->
-  <span>
-    <h2 style="color:#1b5e20; background-color:#f1f8e9;">💡 Meta Data</h2>
-  </span>
-  
   <table>
     <!-- 作者 -->
     <tr>
@@ -337,10 +329,6 @@ content: |-
   </h1>
   
   <!-- Meta Data -->
-  <span>
-    <h2 style="color:#1b5e20; background-color:#f1f8e9;">💡 Meta Data</h2>
-  </span>
-  
   <table>
     <!-- 作者 -->
     <tr>
