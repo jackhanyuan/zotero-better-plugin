@@ -108,6 +108,14 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
   - `Shortcut`: None
   - `Menu Label`: Download PDF From Scihub
 
+- [Format Chinese Annotations](./zotero-actions-tags/FormatChineseAnnotations)
+  - `Name` : Format Chinese Annotations
+  - `Event` : 新建注释 (New annotation)
+  - `Operation` : Script
+  - `Data` : `FormatChineseAnnotations`
+  - `Shortcut`: None
+  - `Menu Label`: Format
+
 ## zotero-gpt
 
 [Command Tags Discussions](https://github.com/MuiseDestiny/zotero-gpt/discussions)

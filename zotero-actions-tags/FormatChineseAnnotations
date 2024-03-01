@@ -1,0 +1,81 @@
+/**
+ * Format Chinese Annotations
+ * @author wakewon
+ * @usage Create Annotation & In Annotation Menu
+ * @link https://github.com/windingwind/zotero-actions-tags/discussions/269
+ * @see https://github.com/windingwind/zotero-actions-tags/discussions/269
+*/
+
+if (!item) {
+  return;
+}
+
+let topItem = Zotero.Items.getTopLevel([item])[0]
+const formatLang = ["", "zh", "zh-CN", "zh_CN"];
+const lang = topItem.getField("language");
+
+if (!formatLang.includes(lang)) {
+  return "[Action: Format Chinese Annotations] Skip due to language";
+}
+
+return await EditAnnotation(item);
+
+async function EditAnnotation(annotationItem) {
+  if (!annotationItem.isAnnotation()) {
+    return "[Action: Format Chinese Annotations] Not an annotation item";
+  }
+  if (annotationItem.annotationText == null) {
+    return "[Action: Format Chinese Annotations] No text found in this annotation";
+  }
+  annotationItem.annotationText = await FormatText(annotationItem.annotationText);
+  return `[Action: Format Chinese Annotations] Success`;
+}
+
+async function FormatText(text) {
+
+  // Remove all line breaks.
+  text = text.replace(/[\r\n]/g, '');
+
+  // Remove special characters.
+  text = text.replace(/[\uE5D2\uE5CF\uE5CE\uE5E5]/g, '');
+
+  // Replace all full-width characters with half-width.
+  text = text.replace(/[Ａ-Ｚａ-ｚ０-９！＂＇（）［］｛｝＜＞，：；－]/g, function (s) {
+    return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+  });
+
+  // Replace consecutive spaces with a single space.
+  text = text.replace(/\s+/g, ' ');
+
+  // Replace spaces around digits with an empty string.
+  text = text.replace(/(?<=\d)\s+|\s+(?=\d)/g, '');
+
+
+  // Replace spaces around punctuation with an empty string.
+  text = text.replace(/\s*(?=[.,:;!?"()\[\]。？！，、；：“”‘’（）《》【】])|(?<=[.,:;!?"()\[\]。？！，、；：“”‘’（）《》【】])\s*/g, '');
+
+  // Remove spaces between Chinese characters, but keep spaces between English letters and digits.
+  text = text.replace(/(\S)\s+(?=[\u4e00-\u9fff])|(?<=[\u4e00-\u9fff])\s+(\S)/g, '\$1\$2');
+
+  // Replace English punctuation marks adjacent to Chinese characters with Chinese punctuation marks.
+  text = text.replace(/([\u4e00-\u9fff]+)([,.!?:;]+)/g, function (match, chinese, punctuation) {
+    const punctuationMap = {
+      '.': '。',
+      ',': '，',
+      '!': '！',
+      '?': '？',
+      ':': '：',
+      ';': '；'
+    };
+    return chinese + punctuation.split('').map(p => punctuationMap[p]).join('');
+  });
+
+  // Replace full-width parentheses around digits and letters with half-width parentheses.
+  text = text.replace(/([0-9a-zA-Z])（/g, "\$1" + String.fromCharCode(0xFF08));
+  text = text.replace(/）([0-9a-zA-Z])/g, String.fromCharCode(0xFF09) + "\$1");
+
+  // Replace all periods with full-width periods.
+  text = text.replace(/\．/g, '。');
+
+  return text;
+}
