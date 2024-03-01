@@ -11,7 +11,7 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [jasminum](https://github.com/l0o0/jasminum) - A Zotero add-on to retrive CNKI meta data. 一个简单的 Zotero 插件，用于识别中文元数据。
 - [zotcard](https://github.com/018/zotcard) - A card note-taking enhancement tool, write cards quickly while reading.
 - [zotero-gpt](https://github.com/MuiseDestiny/zotero-gpt) - Use ChatGPT to search and ask items based on the selected text or the PDF file.
-- [zotero-style](https://github.com/MuiseDestiny/zotero-style) - Ethereal Style for Zotero. Modifies columns and adds some interesting ones.
+- [zotero-style](https://github.com/MuiseDestiny/zotero-style) - Ethereal Style for Zotero. Modifies columns and adds some interesting ones. [Latest version](https://gitee.com/MuiseDestiny/plugins/raw/master/zotero-style.xpi).
 - [zotero-actions-tags](https://github.com/windingwind/zotero-actions-tags) - Action it, tag it, sorted.
 - [zotero-reference](https://github.com/MuiseDestiny/zotero-reference) - PDF references add-on for Zotero.
 - [zotero-pdf-preview](https://github.com/windingwind/zotero-pdf-preview) - Preview Zotero attachments in the library view.
