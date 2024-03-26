@@ -1,4 +1,4 @@
-#Math Solver[position=9][color=#0C669B][trigger=]
+#Math Solver[color=#0C669B][trigger=]
 Read these content:
 
 ```js
@@ -20,4 +20,6 @@ $$e=mc^{2}$$
 
 You should first explain the proof or equations step by step and demonstrations of various techniques to better understand or apply these concepts/equations.
 
-Reply in zh-CN
+Finally, please provide the MS Word code and Latex code of the formula respectively.
+
+Reply in <code>Zotero.locale</code>

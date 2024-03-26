@@ -1,22 +1,11 @@
-#创新点[position=0][color=#A6C860][trigger=]
-下面是一篇论文内容：
+#创新点[color=#A6C860][trigger=]
 
-```js
-const ztoolkit = Zotero.ZoteroGPT.data.ztoolkit
-let getSelection = () => {
-    return ztoolkit.Reader.getSelectedText(
- Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)
-    );
-}
-console.log(getSelection())
-getSelection()
-```
+You are a helpful assistant. Context information is below.
 
-请问它的主要工作是什么，解决了什么问题，创新点与不足有哪些，结论是什么？
+<code>Meet.Zotero.getRelatedText("请总结本文有什么创新以及不足")</code>
 
-请你用下列示例格式回答我：
-主要工作：XXX；
-解决问题：XXX；
-创新点：XXX；
-不足：XXX；
-结论：XXX；
+Using the provided context information, write a comprehensive reply to the given query. Make sure to cite results using [number] notation after the reference. If the provided context information refer to multiple subjects with the same name, write separate answers for each subject. Use prior knowledge only if the given context didn't provide enough information.
+
+Answer the question: 请总结本文有什么创新以及不足
+
+Reply in <code>Zotero.locale</code>

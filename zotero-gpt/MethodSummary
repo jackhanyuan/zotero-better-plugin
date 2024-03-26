@@ -1,14 +1,11 @@
-#方法总结[position=0][color=#61E50C][trigger=]
-请用子弹列表的形式提取该研究内容的信息，包括 数据，方法，实验，结论。务必使用中文回答。
+#方法总结[color=#61E50C][trigger=]
+
 下面是论文的研究内容部分：
 
-```js
-const ztoolkit = Zotero.ZoteroGPT.data.ztoolkit
-let getSelection = () => {
-    return ztoolkit.Reader.getSelectedText(
- Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)
-    );
-}
-console.log(getSelection())
-getSelection()
-```
+<code>Meet.Zotero.getRelatedText("请提取 INTRODUCTION, METHOD, RESULTS, 研究方法, 内容, 创新点等信息，并提炼为 数据, 方法, 实验, 结论, 创新点")</code>
+
+根据上述内容填充下列表格 (如未提及请用"-"表示，输出为markdown表格)：        |项目|内容|        |--|--|        |📖数据| |        |✍️方法| |        |🕊️实验| |        |🔍结论| |        |⭐创新点| |      
+
+确保使用[number]符号引用参考文献。
+
+Reply in <code>Zotero.locale</code>

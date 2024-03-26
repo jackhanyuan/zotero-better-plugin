@@ -123,13 +123,23 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 - [期刊评价](./zotero-gpt/JournalEvaluation)
 
-- [方法总结](./zotero-gpt/MethodSummary)
+- [摘要总结](./zotero-gpt/AbstractSummary)
 
 - [创新点](./zotero-gpt/Innovation)
 
-- [摘要转综述](./zotero-gpt/AbstractToReview)
+- [方法总结](./zotero-gpt/MethodSummary)
+
+- [文章总结](./zotero-gpt/PaperSummary)
 
 - [数学公式解释](./zotero-gpt/MathSolver)
+
+- [摘要批量转综述](./zotero-gpt/BatchAbstractSummary)
+
+- [解释](./zotero-gpt/ExplainSelection)
+
+- [改写](./zotero-gpt/RewriteSelection)
+
+- [概括](./zotero-gpt/SummarizeSelection)
 
 ## zotcard
 

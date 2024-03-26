@@ -1,0 +1,25 @@
+#摘要总结[color=#CD8348][trigger=]
+
+现在我正在阅读一篇文献，题目、发表日期、作者、摘要信息如下：
+
+```js
+let getSelection = () => {
+    if (typeof ZoteroPane !== 'undefined' && ZoteroPane.getSelectedItems().length > 0) {
+        let topItem = ZoteroPane.getSelectedItems()[0];
+        return `
+Title: ${topItem.getField("title")}
+PUBLISH DATE: ${topItem.getField("date")}
+AUTHOR:${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
+ABSTRACT:${topItem.getField("abstractNote")}`
+    } else {
+        return 'No item selected or ZoteroPane is not available.';
+    }
+}
+console.log(getSelection())
+getSelection()
+```
+
+请你简要总结这篇文献，并给出几个我可能感兴趣的问题。
+
+Reply in <code>Zotero.locale</code>
+

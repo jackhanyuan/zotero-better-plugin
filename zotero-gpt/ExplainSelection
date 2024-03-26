@@ -1,0 +1,12 @@
+#解释[color=#F2776A][trigger=/(解释|解读)/]
+Read these content:
+
+${
+Meet.Global.input ||
+Meet.Zotero.getPDFSelection() ||
+Meet.Global.views.messages[0].content
+}$
+
+分析它所属的科研领域，扮演一位对该领域精通的专家，现在你面对一位初次接触该领域的学者，他对这段文字并不是很理解，请你用通俗的语言解释这段话，让学者能够理解。解释时候，也尽可能用比较学术的语言。输出文字时候适当使用markdown语法，让文字更清晰易读。请直接解释，不要回答文字所属领域，也不要重复你是一位专家之类的话。
+
+Reply in <code>Zotero.locale</code>

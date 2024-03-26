@@ -1,0 +1,10 @@
+#改写[color=#43BAC8][trigger=/(改写|重写|修改)/]
+Read these content:
+
+${
+Meet.Global.input ||
+Meet.Zotero.getPDFSelection() ||
+Meet.Global.views.messages[0].content
+}$
+
+改写这段文字（专有名词、特殊表达除外），要符合学术风格，适当改进拼写、清晰度、简洁性和整体可读性。必要时，重写整个句子。改写的语言和原内容保持一致，改写后的结果为：

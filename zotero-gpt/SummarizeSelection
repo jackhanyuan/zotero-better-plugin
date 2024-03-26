@@ -1,0 +1,12 @@
+#概括[color=#D13F8C][trigger=/(概括)/]
+Read these content:
+
+${
+Meet.Global.input ||
+Meet.Zotero.getPDFSelection() ||
+Meet.Global.views.messages[0].content
+}$
+
+现在我在撰写学术论文，想引用这段文字，但它内容太长，现需要你尽可能概括这段文字，概括后的文字表达要准确，简洁。
+
+Reply in <code>Zotero.locale</code>
