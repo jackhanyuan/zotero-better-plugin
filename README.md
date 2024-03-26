@@ -10,10 +10,10 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex) - Make Zotero effective for us LaTeX holdouts.
 - [jasminum](https://github.com/l0o0/jasminum) - A Zotero add-on to retrive CNKI meta data. 一个简单的 Zotero 插件，用于识别中文元数据。
 - [zotcard](https://github.com/018/zotcard) - A card note-taking enhancement tool, write cards quickly while reading.
-- [zotero-gpt](https://github.com/MuiseDestiny/zotero-gpt) - Use ChatGPT to search and ask items based on the selected text or the PDF file.
+- [zotero-gpt](https://github.com/MuiseDestiny/zotero-gpt) - Use ChatGPT to search and ask items based on the selected text or the PDF file. [Latest version](https://gitee.com/MuiseDestiny/plugins/raw/master/zotero-gpt.xpi).
 - [zotero-style](https://github.com/MuiseDestiny/zotero-style) - Ethereal Style for Zotero. Modifies columns and adds some interesting ones. [Latest version](https://gitee.com/MuiseDestiny/plugins/raw/master/zotero-style.xpi).
 - [zotero-actions-tags](https://github.com/windingwind/zotero-actions-tags) - Action it, tag it, sorted.
-- [zotero-reference](https://github.com/MuiseDestiny/zotero-reference) - PDF references add-on for Zotero.
+- [zotero-reference](https://github.com/MuiseDestiny/zotero-reference) - PDF references add-on for Zotero. [Latest version](https://gitee.com/MuiseDestiny/plugins/raw/master/zotero-reference.xpi).
 - [zotero-format-metadata](https://github.com/northword/zotero-format-metadata) - Linter for Zotero. An addon for Zotero to format item metadata.
 - [zotero-attanger](https://github.com/MuiseDestiny/zotero-attanger) - Attachment Manager for Zotero. Zotfile reimplementation for zotero7.
 - [tara](https://github.com/l0o0/tara) - A Zotero add-on for backup and restore preferences, add-ons, translators, styles, and locate between two machines.
