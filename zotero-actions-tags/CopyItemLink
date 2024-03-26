@@ -2,6 +2,15 @@
 // @author windingwind
 // @link https://github.com/windingwind/zotero-actions-tags/discussions/115
 // @usage Select an item in the library and press the assigned shortcut keys
+//
+// [Copy Item Link]
+// Name: Copy Item Link
+// Event: None
+// Operation: Script
+// Data: JS code below
+// Shortcut: None
+// Menu Label: Copy Item Link
+
 
 if (!item) {
 	return "[Copy Item Link] item is empty";

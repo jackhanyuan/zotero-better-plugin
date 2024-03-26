@@ -1,7 +1,16 @@
 // PDF From Scihub
 // @author Polygon
 // @link https://github.com/windingwind/zotero-actions-tags/discussions/124
-// @usage Menu Label=PDF From Scihub
+//
+// [Download PDF from Scihub]
+// Name : Download PDF From Scihub
+// Event : None
+// Operation : Script
+// Data : JS code below
+// Shortcut: None
+// Menu Label: Download PDF From Scihub
+
+
 const ZoteroPane = require("ZoteroPane")
 const Zotero = require("Zotero")
 let DOI = ""

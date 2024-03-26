@@ -2,6 +2,15 @@
 // @author windingwind, wklimowicz
 // @Modify by [jackhanyuan](https://github.com/jackhanyuan)
 // @link https://github.com/windingwind/zotero-tag/discussions/109
+//
+// [New Common Note]
+// Name : New Common Note
+// Event : None
+// Operation : Script
+// Data : JS code below
+// Shortcut : None
+// Menu Label: New Common Note
+
 
 const Zotero = require("Zotero");
 const window = require("window");

@@ -4,7 +4,16 @@
  * @usage Create Annotation & In Annotation Menu
  * @link https://github.com/windingwind/zotero-actions-tags/discussions/269
  * @see https://github.com/windingwind/zotero-actions-tags/discussions/269
+ * 
+ * [Format Chinese Annotations]
+ *  Name: Format Chinese Annotations
+ *  Event: 新建注释 (New annotation)
+ *  Operation: Script
+ *  Data: FormatChineseAnnotations
+ *  Shortcut: None
+ *  Menu Label: Format Chinese Annotations
 */
+
 
 if (!item) {
   return;

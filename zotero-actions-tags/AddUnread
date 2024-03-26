@@ -1,0 +1,9 @@
+// Add Unread When Create Item
+// 
+// [Add Unread When Create Item]
+// Name : Add Unread When Create Item
+// Event : 新建条目
+// Operation : 添加标签
+// Data : /unread
+// Shortcut : None
+// Menu Label: None

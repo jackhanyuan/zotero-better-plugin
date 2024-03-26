@@ -2,7 +2,17 @@
  * Merge duplicate items
  * @author Zotero Community
  * @link https://github.com/windingwind/zotero-actions-tags/discussions/
+ * 
+ * [Merge Duplicate Items]
+ * Name : Merge Duplicate Items
+ * Event : None
+ * Operation : Script
+ * Data : JS code below
+ * Shortcut : None
+ * Menu Label: Merge Duplicate Items
  */
+
+
 const pane = require('ZoteroPane')
 const zdp = require('Zotero_Duplicates_Pane')
 

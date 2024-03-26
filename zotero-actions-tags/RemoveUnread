@@ -1,0 +1,10 @@
+// Remove Unread When Close Tab
+// 
+// [Remove Unread When Close Tab]
+// Name : Remove Unread When Close Tab
+// Event : 关闭标签页
+// Operation : 移除标签
+// Data : /unread
+// Shortcut : None
+// Menu Label: None
+

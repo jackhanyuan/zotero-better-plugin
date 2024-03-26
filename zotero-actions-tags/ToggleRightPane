@@ -4,7 +4,16 @@
  * @usage Assign a shortcut
  * @link https://github.com/windingwind/zotero-actions-tags/discussions/169
  * @see https://github.com/windingwind/zotero-actions-tags/discussions/169
+ * 
+ * [Toggle Right Pane]
+ *  Name : Toggle Right Pane
+ *  Event : None
+ *  Operation : Script
+ *  Data : JS code below
+ *  Shortcut : Shift + ]
  */
+
+
 const Zotero = require("Zotero");
 const Zotero_Tabs = require("Zotero_Tabs");
 const document = require("document");
