@@ -71,10 +71,14 @@ content: |-
     <!-- Local Link -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b>Local Link: </b>
-        <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].key}>
-          ${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].getFilename()}
-        </a>
+        ${(() => {
+          const attachments = Zotero.Items.get(topItem.getAttachments());
+          if (attachments && attachments.length > 0) {
+            return `<b>Local Link: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          } else {
+            return `<b>Local Link: </b>`;
+          }
+        })()}
       </td>
     </tr>
     
@@ -214,17 +218,21 @@ content: |-
         }}$
       </td>
     </tr>
-  
+
     <!-- 本地链接 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b>本地链接: </b>
-        <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].key}>
-          ${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].getFilename()}
-        </a>
+        ${(() => {
+          const attachments = Zotero.Items.get(topItem.getAttachments());
+          if (attachments && attachments.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          } else {
+            return `<b>本地链接: </b>`;
+          }
+        })()}
       </td>
     </tr>
-    
+
     <!-- DOI or URL -->
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
@@ -364,14 +372,18 @@ content: |-
             }
       </td>
     </tr>
-  
+
     <!-- 本地链接 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b>本地链接: </b>
-        <a href=zotero://open-pdf/0_${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].key}>
-          ${Zotero.Items.get(topItem.getAttachments()).filter((i) => i.isPDFAttachment())[0].getFilename()}
-        </a>
+        ${(() => {
+          const attachments = Zotero.Items.get(topItem.getAttachments());
+          if (attachments && attachments.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          } else {
+            return `<b>本地链接: </b>`;
+          }
+        })()}
       </td>
     </tr>
     
