@@ -73,6 +73,8 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 - [Remove Unread When Close Tab](./zotero-actions-tags/RemoveUnread)
 
+- [Auto Translate Item Title and Abstract](./zotero-actions-tags/TranslateTitleAbstract)
+
 ## zotero-gpt
 
 [Command Tags Discussions](https://github.com/MuiseDestiny/zotero-gpt/discussions)

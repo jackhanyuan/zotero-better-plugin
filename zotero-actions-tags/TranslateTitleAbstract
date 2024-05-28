@@ -1,0 +1,54 @@
+// Auto Translate Item Title and Abstract
+// @author windingwind, PhoenixHwang, northword
+// link https://github.com/windingwind/zotero-tag/discussions/107
+// 
+// [Auto Translate Item Title and Abstract]
+// Name : Auto Translate Item Title and Abstract
+// Event : Create Item
+// Operation : Script
+// Data : JS code below
+// Shortcut : None
+// Menu Label: None
+
+
+const Zotero = require("Zotero");
+if (!Zotero.PDFTranslate) {
+	return "[Action:Translate Title and Abstract] Translate for Zotero is not installed or disabled.";
+}
+if (!item) {
+	return "[Action:Translate Title and Abstract] Target item is empty";
+}
+
+const skipLang = ["", "zh", "zh-CN"];
+const lang = item.getField("language");
+
+if (skipLang.includes(lang)) {
+	return "[Action:Translate Title and Abstract] Skip due to language"
+}
+
+const title = item.getField("title");
+const abstract = item.getField("abstractNote");
+
+const titleResult = (await Zotero.PDFTranslate.api.translate(title)).result;
+Zotero.PDFTranslate.data.ztoolkit.ExtraField.setExtraField(item, "titleTranslation", titleResult);
+
+let abstractResult = "";
+if (abstract) {
+    abstractResult = (await Zotero.PDFTranslate.api.translate(abstract)).result;
+    Zotero.PDFTranslate.data.ztoolkit.ExtraField.setExtraField(item, "abstractTranslation", abstractResult);
+} else {
+    const observerID = Zotero.Notifier.registerObserver({
+        notify: async (event, type, ids, extraData) => {
+            if (event === 'modify' && type === 'item' && ids.includes(item.id)) {
+                const newAbstract = item.getField('abstractNote');
+                if (newAbstract) {
+                    abstractResult = (await Zotero.PDFTranslate.api.translate(newAbstract)).result;
+                    Zotero.PDFTranslate.data.ztoolkit.ExtraField.setExtraField(item, "abstractTranslation", abstractResult);
+                    Zotero.Notifier.unregisterObserver(observerID);
+                }
+            }
+        }
+    }, ['item']);
+}
+
+return `[Action:Translate Title and Abstract] successfully translate title ${title} to ${titleResult} and abstract.`;
