@@ -25,11 +25,15 @@ content: |-
   <!-- Title -->
   <h1 style="color:#193c47; background-color:#eef9fd; padding:8px;">
     ${(() => {
+      const date = topItem.getField("date").split('T')[0];
+      const title = topItem.getField("title");
       const titleTranslation = topItem.getField("titleTranslation");
-      if (titleTranslation) {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")} (${titleTranslation})`;
+      if (date && titleTranslation) {
+        return `(${date}) ${title} (${titleTranslation})`;
+      } else if (date) {
+        return `(${date}) ${title}`;
       } else {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")}`;
+        return `${title}`;
       }
     })()}
   </h1>
@@ -73,8 +77,9 @@ content: |-
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         ${(() => {
           const attachments = Zotero.Items.get(topItem.getAttachments());
-          if (attachments && attachments.length > 0) {
-            return `<b>Local Link: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          const pdf = attachments.filter((i) => i.isPDFAttachment());
+          if (pdf && pdf.length > 0) {
+            return `<b>Local Link: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
           } else {
             return `<b>Local Link: </b>`;
           }
@@ -176,11 +181,15 @@ content: |-
   <!-- 标题 -->
   <h1 style="color:#193c47; background-color:#eef9fd; padding:8px;">
     ${(() => {
+      const date = topItem.getField("date").split('T')[0];
+      const title = topItem.getField("title");
       const titleTranslation = topItem.getField("titleTranslation");
-      if (titleTranslation) {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")} (${titleTranslation})`;
+      if (date && titleTranslation) {
+        return `(${date}) ${title} (${titleTranslation})`;
+      } else if (date) {
+        return `(${date}) ${title}`;
       } else {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")}`;
+        return `${title}`;
       }
     })()}
   </h1>
@@ -224,8 +233,9 @@ content: |-
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         ${(() => {
           const attachments = Zotero.Items.get(topItem.getAttachments());
-          if (attachments && attachments.length > 0) {
-            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          const pdf = attachments.filter((i) => i.isPDFAttachment());
+          if (pdf && pdf.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
           } else {
             return `<b>本地链接: </b>`;
           }
@@ -327,11 +337,15 @@ content: |-
   <!-- 标题 -->
   <h1 style="color:#193c47; background-color:#eef9fd; padding:8px;">
     ${(() => {
+      const date = topItem.getField("date").split('T')[0];
+      const title = topItem.getField("title");
       const titleTranslation = topItem.getField("titleTranslation");
-      if (titleTranslation) {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")} (${titleTranslation})`;
+      if (date && titleTranslation) {
+        return `(${date}) ${title} (${titleTranslation})`;
+      } else if (date) {
+        return `(${date}) ${title}`;
       } else {
-        return `(${topItem.getField("date")}) ${topItem.getField("title")}`;
+        return `${title}`;
       }
     })()}
   </h1>
@@ -378,8 +392,9 @@ content: |-
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         ${(() => {
           const attachments = Zotero.Items.get(topItem.getAttachments());
-          if (attachments && attachments.length > 0) {
-            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
+          const pdf = attachments.filter((i) => i.isPDFAttachment());
+          if (pdf && pdf.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
           } else {
             return `<b>本地链接: </b>`;
           }
