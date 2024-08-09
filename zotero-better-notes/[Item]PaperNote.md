@@ -43,14 +43,14 @@ content: |-
     <!-- Author -->
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
-        <b>Author:</b> ${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
+        <b>Author:</b> ${topItem.getCreators().slice(0, 10).map((v) => v.firstName + " " + v.lastName).join("; ") + (topItem.getCreators().length > 10 ? "; et al." : ";")}
       </td>
     </tr>
   
     <!-- Journal -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> (Publication Date: ${topItem.getField("date")})</b>
+        <b style="color:#193c47;">Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> (Publication Date: ${topItem.getField("date").split('T')[0]})</b>
       </td>
     </tr>
   
@@ -80,6 +80,8 @@ content: |-
           const pdf = attachments.filter((i) => i.isPDFAttachment());
           if (pdf && pdf.length > 0) {
             return `<b>Local Link: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
+          } else if (attachments && attachments.length > 0) {
+            return `<b>Local Link: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
           } else {
             return `<b>Local Link: </b>`;
           }
@@ -199,14 +201,14 @@ content: |-
     <!-- 作者 -->
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
-        <b>作者:</b> ${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
+        <b>作者:</b> ${topItem.getCreators().slice(0, 10).map((v) => v.firstName + " " + v.lastName).join("; ") + (topItem.getCreators().length > 10 ? "; et al." : ";")}
       </td>
     </tr>
   
     <!-- 期刊 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date")}）</b>
+        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date").split('T')[0]}）</b>
       </td>
     </tr>
   
@@ -236,6 +238,8 @@ content: |-
           const pdf = attachments.filter((i) => i.isPDFAttachment());
           if (pdf && pdf.length > 0) {
             return `<b>本地链接: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
+          } else if (attachments && attachments.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
           } else {
             return `<b>本地链接: </b>`;
           }
@@ -355,14 +359,14 @@ content: |-
     <!-- 作者 -->
     <tr>
       <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
-        <b>作者:</b> ${topItem.getCreators().map((v) => v.firstName + " " + v.lastName).join("; ")}
+        <b>作者:</b> ${topItem.getCreators().slice(0, 10).map((v) => v.firstName + " " + v.lastName).join("; ") + (topItem.getCreators().length > 10 ? "; et al." : ";")}
       </td>
     </tr>
   
     <!-- 期刊 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date")}）</b>
+        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date").split('T')[0]}）</b>
       </td>
     </tr>
   
@@ -395,6 +399,8 @@ content: |-
           const pdf = attachments.filter((i) => i.isPDFAttachment());
           if (pdf && pdf.length > 0) {
             return `<b>本地链接: </b><a href="zotero://open-pdf/0_${pdf[0].key}">${pdf[0].getFilename()}</a>`;
+          } else if (attachments && attachments.length > 0) {
+            return `<b>本地链接: </b><a href="zotero://open-pdf/0_${attachments[0].key}">${attachments[0].getFilename()}</a>`;
           } else {
             return `<b>本地链接: </b>`;
           }
