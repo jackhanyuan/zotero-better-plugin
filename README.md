@@ -24,7 +24,7 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ## zotero other links
 
-- [Zotero7 Beta Builds](https://www.zotero.org/support/beta_builds) - Zotero7 官方下载链接。
+- [Zotero7 download](https://www.zotero.org/download/) - Zotero7 官方下载链接。[Beta Builds](https://www.zotero.org/support/beta_builds).
 - [zotero-chinese](https://zotero-chinese.com) - Zotero 中文小组，维护 Zotero 中文文档、教程等。
 - [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl) - 中文CLS样式（参考文献样式）。
 - [translators_CN](https://github.com/l0o0/translators_CN) - Zotero translator中文网页抓取翻译器。
