@@ -116,10 +116,18 @@ content: |-
         })()}
       </td>
     </tr>
+    
+    <!-- Tags -->
+    <tr>
+    <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <!-- Filter and display tags starting with # -->
+      <b>Tags:</b> ${topItem.getTags().map(tagObj => tagObj.tag.startsWith('#') ? tagObj.tag + ' ,':'').join(' ') || ''}
+    </td>
+    </tr>
   
     <!-- Note Date -->
     <tr>
-      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         <b>Note Date: </b>${new Date().toLocaleString()}
       </td>
     </tr>
@@ -274,10 +282,18 @@ content: |-
         })()}
       </td>
     </tr>
+
+    <!-- 标签 -->
+    <tr>
+    <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <!-- 仅过滤并显示#开头的标签 -->
+      <b>标签:</b> ${topItem.getTags().map(tagObj => tagObj.tag.startsWith('#') ? tagObj.tag + ' ,':'').join(' ') || ''}
+    </td>
+    </tr>
   
     <!-- 笔记日期 -->
     <tr>
-      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         <b>笔记日期: </b>${new Date().toLocaleString()}
       </td>
     </tr>
@@ -435,10 +451,18 @@ content: |-
         })()}
       </td>
     </tr>
+
+    <!-- 标签 -->
+    <tr>
+    <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <!-- 仅过滤并显示#开头的标签 -->
+      <b>标签:</b> ${topItem.getTags().map(tagObj => tagObj.tag.startsWith('#') ? tagObj.tag + ' ,':'').join(' ') || ''}
+    </td>
+    </tr>
   
     <!-- 笔记日期 -->
     <tr>
-      <td style="color:#193c47; background-color:#dbeedd; padding:8px;">
+      <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
         <b>笔记日期: </b>${new Date().toLocaleString()}
       </td>
     </tr>
