@@ -50,7 +50,34 @@ content: |-
     <!-- Journal -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">Journal: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> (Publication Date: ${topItem.getField("date").split('T')[0]})</b>
+        <b style="color:#193c47;">Journal: 
+        <b style="color:#FF0000">
+          ${topItem.getField('publicationTitle')},
+        </b>
+        ${(()=>{
+          const volume = topItem.getField('volume');
+          const issue = topItem.getField('issue');
+          const pages = topItem.getField('pages');
+          const year = topItem.getField('date').split('-')[0];
+          let line = "";
+          if (volume) {
+            line += volume;
+            if (issue) {
+              line += '(' + issue + ')';
+              line += pages ? ": " + pages + "," : ","
+            } else {
+              line += pages ? ": " + pages + "," : ","
+            }
+          } else if (issue) {
+            line += '(' + issue + ')';
+            line += pages ? ": " + pages : ","
+          } else {
+            line += pages ? pages + "," : ""
+          }
+          line += year ? " " + year + "." : ""; 
+          return line;
+        })()}
+        </b>
       </td>
     </tr>
   
@@ -216,7 +243,34 @@ content: |-
     <!-- 期刊 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date").split('T')[0]}）</b>
+        <b style="color:#193c47;">期刊: 
+        <b style="color:#FF0000">
+          ${topItem.getField('publicationTitle')},
+        </b>
+        ${(()=>{
+          const volume = topItem.getField('volume');
+          const issue = topItem.getField('issue');
+          const pages = topItem.getField('pages');
+          const year = topItem.getField('date').split('-')[0];
+          let line = "";
+          if (volume) {
+            line += volume;
+            if (issue) {
+              line += '(' + issue + ')';
+              line += pages ? ": " + pages + "," : ","
+            } else {
+              line += pages ? ": " + pages + "," : ","
+            }
+          } else if (issue) {
+            line += '(' + issue + ')';
+            line += pages ? ": " + pages : ","
+          } else {
+            line += pages ? pages + "," : ""
+          }
+          line += year ? " " + year + "." : ""; 
+          return line;
+        })()}
+        </b>
       </td>
     </tr>
   
@@ -382,7 +436,34 @@ content: |-
     <!-- 期刊 -->
     <tr>
       <td style="color:#193c47; background-color:#f3faf4; padding:8px;">
-        <b style="color:#193c47;">期刊: <b style="color:#FF0000">${topItem.getField('publicationTitle')}</b></b><b style="color:#193c47;"> （发表日期: ${topItem.getField("date").split('T')[0]}）</b>
+        <b style="color:#193c47;">期刊: 
+        <b style="color:#FF0000">
+          ${topItem.getField('publicationTitle')},
+        </b>
+        ${(()=>{
+          const volume = topItem.getField('volume');
+          const issue = topItem.getField('issue');
+          const pages = topItem.getField('pages');
+          const year = topItem.getField('date').split('-')[0];
+          let line = "";
+          if (volume) {
+            line += volume;
+            if (issue) {
+              line += '(' + issue + ')';
+              line += pages ? ": " + pages + "," : ","
+            } else {
+              line += pages ? ": " + pages + "," : ","
+            }
+          } else if (issue) {
+            line += '(' + issue + ')';
+            line += pages ? ": " + pages : ","
+          } else {
+            line += pages ? pages + "," : ""
+          }
+          line += year ? " " + year + "." : ""; 
+          return line;
+        })()}
+        </b>
       </td>
     </tr>
   
