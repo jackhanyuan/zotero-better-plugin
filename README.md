@@ -7,6 +7,7 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 - [zotero-addons](https://github.com/syt2/zotero-addons) - A Zotero Add-on for collecting and installing add-ons in Zotero. Zotero 插件商店。
 - [zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate) - Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. Support 20+ translate services.
 - [zotero-better-notes](https://github.com/windingwind/zotero-better-notes) - Everything about note management. All in Zotero.
+- [zotero-pdf2zh](https://github.com/guaguastandup/zotero-pdf2zh) - Zotero PDF中文翻译插件，在Zotero中使用[PDF2zh](https://github.com/Byaidu/PDFMathTranslate)和[PDF2zh_next](https://github.com/PDFMathTranslate/PDFMathTranslate-next)。
 - [zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex) - Make Zotero effective for us LaTeX holdouts.
 - [jasminum](https://github.com/l0o0/jasminum) - A Zotero add-on to retrive CNKI meta data. 一个简单的 Zotero 插件，用于识别中文元数据。
 - [zotcard](https://github.com/018/zotcard) - A card note-taking enhancement tool, write cards quickly while reading.
@@ -24,9 +25,9 @@ Make zotero7 plugins better, including note templates, tag actions, etc.
 
 ## zotero other links
 
-- [Zotero7 download](https://www.zotero.org/download/) - Zotero7 官方下载链接。[Beta Builds](https://www.zotero.org/support/beta_builds).
+- [Zotero7 download](https://www.zotero.org/download/) - Zotero7 官方下载链接。[Zotero8 Beta Builds](https://www.zotero.org/support/beta_builds).
 - [zotero-chinese](https://zotero-chinese.com) - Zotero 中文小组，维护 Zotero 中文文档、教程等。
-- [Chinese-STD-GB-T-7714-related-csl](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl) - 中文CLS样式（参考文献样式）。
+- [Chinese-STD-GB-T-7714-related-csl](https://github.com/zotero-chinese/styles) - 中文CLS样式（参考文献样式）。
 - [translators_CN](https://github.com/l0o0/translators_CN) - Zotero translator中文网页抓取翻译器。
 - [easyScholar](https://www.easyscholar.cc) - 在论文搜索网站上显示期刊等级，配合 zotero-style 插件可在 Zotero 内显示期刊标签。
 
