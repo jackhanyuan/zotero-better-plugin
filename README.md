@@ -26,7 +26,7 @@ Enhance Zotero 7, 8, and 9 with recommended plugins, essential resources, note t
 
 ## zotero other links
 
-- [Zotero9 download](https://www.zotero.org/download/) - Zotero7 官方下载链接。[Zotero9 Beta Builds](https://www.zotero.org/support/beta_builds). [Zotero8 for Mac](https://www.zotero.org/download/client/dl?channel=release&platform=mac&version=8.0.5), [Zotero8 for Windows](https://www.zotero.org/download/client/dl?channel=release&platform=win-x64&version=8.0.4).
+- [Zotero9 download](https://www.zotero.org/download/) - Zotero9 官方下载链接。[Zotero9 Beta Builds](https://www.zotero.org/support/beta_builds). [Zotero8 for Mac](https://www.zotero.org/download/client/dl?channel=release&platform=mac&version=8.0.5), [Zotero8 for Windows](https://www.zotero.org/download/client/dl?channel=release&platform=win-x64&version=8.0.4).
 - [zotero-chinese](https://zotero-chinese.com) - Zotero 中文小组，维护 Zotero 中文文档、教程、插件及样式等。
 - [Chinese-STD-GB-T-7714-related-csl](https://github.com/zotero-chinese/styles) - 中文CLS样式（参考文献样式）。
 - [translators_CN](https://github.com/l0o0/translators_CN) - Zotero translator中文网页抓取翻译器。
